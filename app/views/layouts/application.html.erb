@@ -12,6 +12,7 @@
   <body>
     <header>
       <h1>Easy Reserve</h1>
+      <%= link_to "New Event", new_event_path %>
       <% if user_signed_in? %>
         <%= "#{current_user.user_name}" %>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
