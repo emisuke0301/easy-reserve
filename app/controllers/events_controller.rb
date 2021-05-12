@@ -10,7 +10,6 @@ class EventsController < ApplicationController
   end
 
   def create
-    binding.pry
     @event = Event.create(event_params)
     if @event.save
       redirect_to root_path

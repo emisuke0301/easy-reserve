@@ -1,0 +1,8 @@
+<% @event.each do |event|%>
+	<%= event.user.user_name %><br>
+	<%= image_tag event.image.variant(resize: '500x500') %><br>
+	<%= event.event_name %><br>
+	<%= event.date %> <%= event.open_time %> <%= event.start_time %><br>
+	place: @<%= event.place %> adv: ¥<%= event.price_adv %> door: ¥<%= event.price_door %><br>
+	<%= event.event_text %><br>
+<% end %>
