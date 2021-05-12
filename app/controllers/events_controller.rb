@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @events = Event.all.order('created_at DESC')
+    @event = Event.all.order('created_at DESC')
   end
 
   def new
@@ -10,6 +10,7 @@ class EventsController < ApplicationController
   end
 
   def create
+    binding.pry
     @event = Event.create(event_params)
     if @event.save
       redirect_to root_path
@@ -21,6 +22,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:event_name, :date, :open_time, :start_time, :place, :price_adv, :price_door, :capacity, :genre_id, :event_text, :precautions, images: []).merge(user_id: current_user.id)
+    params.require(:event).permit(:event_name, :date, :open_time, :start_time, :place, :price_adv, :price_door, :capacity, :genre_id, :event_text, :precautions, :image).merge(user_id: current_user.id)
   end
 end

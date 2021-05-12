@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
 	belongs_to :user
-	has_many_attached :images
-	
+	has_one_attached :image
+
 	extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :genre
 end
