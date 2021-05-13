@@ -1,4 +1,4 @@
-# アプリケーション名: Easy Reserved
+# アプリケーション名: Easy Reserve
 
 URL: 
 
